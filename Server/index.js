@@ -30,7 +30,7 @@ const connect = () => {
 
 app.use(
   cors({
-    origin: 'https://e-gebiya.vercel.app/',
+    origin: 'https://e-gebiya.vercel.app',
     credentials: true,
   })
 );
