@@ -8,7 +8,7 @@ import userRouter from './routers/user.js';
 import productRouter from './routers/product.js';
 import cartRouter from './routers/cart.js';
 import orderRouter from './routers/order.js';
-
+import stripeRouter from './router/stripe.js';
 const app = express();
 
 //dotenv config
@@ -46,6 +46,7 @@ app.use('/api/users', userRouter);
 app.use('/api/product', productRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/orders', orderRouter);
+app.use('/api/pay', stripeRouter);
 
 //error handling
 app.use((err, req, res, next) => {
