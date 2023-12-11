@@ -7,6 +7,7 @@ import Products from './page/Products';
 import Register from './page/Register';
 import Login from './page/Login';
 import Pay from './page/Pay';
+import Stripe from './page/Stripe';
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="pay" element={<Pay />} />
+          <Route path="stripe" element={<Stripe />} />
         </Route>
       </Routes>
     </BrowserRouter>
