@@ -6,6 +6,7 @@ import img from '../img/man.png';
 import Add from '@mui/icons-material/Add';
 import Remove from '@mui/icons-material/Remove';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div``;
 
@@ -225,7 +226,9 @@ function Cart() {
               <SummaryText>Total</SummaryText>
               <SummaryPrice>$ {cart.total}</SummaryPrice>
             </SummaryItem>
-            <SummaryButton>CHECK OUT NOW</SummaryButton>
+            <SummaryButton>
+              <Link to={'/pay'}>CHECK OUT NOW</Link>
+            </SummaryButton>
           </Summary>
         </Bottom>
       </Wrapper>
