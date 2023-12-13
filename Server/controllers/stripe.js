@@ -45,8 +45,11 @@ export const chapaPay = async (req, res, next) => {
   };
   request(options, function (error, response) {
     if (error) throw new Error(error);
-    console.log(response.body);
-    const da = response.body;
     res.status(200).json(response.body);
   });
+};
+
+export const chapaPayVerify = async (req, res, next) => {
+  const code = await Promise.resolve(chapaPay(req, res, next));
+  console.log(code);
 };
