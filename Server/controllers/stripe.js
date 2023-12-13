@@ -1,7 +1,7 @@
-import stripe from 'stripe';
+import stripePackage from 'stripe';
 
+const stripe = stripePackage(process.env.Stripe);
 export const StripePay = async (req, res, next) => {
-  stripe.process.env.JWT_S;
   stripe.charges.create(
     {
       source: req.body.tokenId,
