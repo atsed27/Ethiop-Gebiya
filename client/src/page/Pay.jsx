@@ -10,7 +10,7 @@ function Pay() {
       const res = await axios.post(
         'https://e-gebiya-k75e.onrender.com/api/pay/chapa',
         {
-          amount: cart.total * 100,
+          amount: cart.total,
         }
       );
       //console.log(JSON.parse(res.data));
