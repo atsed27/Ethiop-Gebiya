@@ -8,5 +8,5 @@ const router = express.Router();
 router.post('/stripe', StripePay);
 
 //chapa
-router.post('/chapa', chapaPay);
+router.get('/chapa', chapaPay);
 export default router;
