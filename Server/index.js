@@ -8,7 +8,7 @@ import userRouter from './routers/user.js';
 import productRouter from './routers/product.js';
 import cartRouter from './routers/cart.js';
 import orderRouter from './routers/order.js';
-import stripeRouter from './router/stripe.js';
+import stripeRouter from './routers/stripe.js';
 const app = express();
 
 //dotenv config
