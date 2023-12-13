@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const kEy =
   'pk_test_51OGNW1FH7zgKERAJkyDaNGlXVOei0qeT20URg24F8f2ynpSOvGIn1Jq6PZKOGKbjQ5yJ53QUhfa6E6Sm4c1AUiaZ00xfjavCU2';
@@ -10,6 +11,8 @@ function Stripe() {
   const [stripeToken, setStripeToke] = useState(null);
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
+  const navigation = useNavigate();
+
   console.log(user);
   console.log(cart);
   const onToken = (token) => {
@@ -28,6 +31,7 @@ function Stripe() {
           }
         );
         console.log(res);
+        navigation('/', { data: res.data });
       } catch (error) {
         console.log(error);
       }
@@ -37,7 +41,7 @@ function Stripe() {
   return (
     <div className="flex items-center justify-center h-screen">
       <StripeCheckout
-        name="daniel"
+        name={user.currentUser.username}
         image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png" // the pop-in header image (default none)
         description="Foe Gebiya"
         amount={cart.total * 100}
