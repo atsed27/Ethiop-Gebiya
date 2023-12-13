@@ -18,7 +18,7 @@ function Stripe() {
           'https://e-gebiya-k75e.onrender.com/api/pay/stripe',
           {
             tokenId: stripeToken.id,
-            amount: 2000,
+            amount: 5000,
           }
         );
         console.log(res);
