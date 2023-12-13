@@ -1,8 +1,9 @@
-import stripe from 'stripe';
+import stripePackage from 'stripe';
 
-const stripeP = stripe(process.env.Stripe);
+const stripe = stripePackage(process.env.Stripe);
+
 export const StripePay = async (req, res, next) => {
-  stripeP.charges.create(
+  stripe.charges.create(
     {
       source: req.body.tokenId,
       amount: req.body.amount,
