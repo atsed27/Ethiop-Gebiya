@@ -30,7 +30,7 @@ export const chapaPay = async (req, res, next) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      amount: '100',
+      amount: req.body.amount,
       currency: 'ETB',
       email: 'danielnigatu09@gmail.com',
       first_name: 'Daniel',

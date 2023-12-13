@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function Pay() {
+  const cart = useSelector((state) => state.cart);
   const chapaClick = async () => {
     try {
       const res = await axios.post(
-        'https://e-gebiya-k75e.onrender.com/api/pay/chapa'
+        'https://e-gebiya-k75e.onrender.com/api/pay/chapa',
+        {
+          amount: cart.total * 100,
+        }
       );
       //console.log(JSON.parse(res.data));
       let x = JSON.parse(res.data);
