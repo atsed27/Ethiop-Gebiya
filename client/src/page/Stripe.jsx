@@ -9,6 +9,8 @@ const kEy =
 function Stripe() {
   const [stripeToken, setStripeToke] = useState(null);
   const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.user);
+  console.log(user);
   console.log(cart);
   const onToken = (token) => {
     console.log(token);
@@ -22,7 +24,7 @@ function Stripe() {
           'https://e-gebiya-k75e.onrender.com/api/pay/stripe',
           {
             tokenId: stripeToken.id,
-            amount: cart.total,
+            amount: cart.total * 100,
           }
         );
         console.log(res);
@@ -31,14 +33,14 @@ function Stripe() {
       }
     };
     stripeToken && makeRequest();
-  }, [stripeToken]);
+  }, [cart.total, stripeToken]);
   return (
     <div className="flex items-center justify-center h-screen">
       <StripeCheckout
         name="daniel"
         image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png" // the pop-in header image (default none)
-        description="lap negn"
-        amount={50000}
+        description="Foe Gebiya"
+        amount={cart.total * 100}
         currency="USD"
         shippingAddress
         billingAddress
