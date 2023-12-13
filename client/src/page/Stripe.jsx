@@ -14,10 +14,13 @@ function Stripe() {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = axios.post('http://localhost:9401/api/pay/payment', {
-          tokenId: stripeToken.id,
-          amount: 2000,
-        });
+        const res = axios.post(
+          'https://e-gebiya-k75e.onrender.com/api/pay/payment',
+          {
+            tokenId: stripeToken.id,
+            amount: 2000,
+          }
+        );
         console.log(res);
       } catch (error) {
         console.log(error);
