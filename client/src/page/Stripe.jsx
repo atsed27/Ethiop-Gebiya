@@ -37,24 +37,28 @@ function Stripe() {
       }
     };
     stripeToken && makeRequest();
-  }, [cart.total, stripeToken]);
+  }, [cart.total, navigation, stripeToken]);
   return (
     <div className="flex items-center justify-center h-screen">
-      <StripeCheckout
-        name={user.currentUser.username}
-        image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png" // the pop-in header image (default none)
-        description="Foe Gebiya"
-        amount={cart.total * 100}
-        currency="USD"
-        shippingAddress
-        billingAddress
-        token={onToken}
-        stripeKey={kEy}
-      >
-        <button className="px-3 py-2 text-xl text-white bg-blue-700 rounded-lg">
-          Pay
-        </button>
-      </StripeCheckout>
+      {stripeToken ? (
+        <span>please with it is processing....</span>
+      ) : (
+        <StripeCheckout
+          name={user.currentUser.username}
+          image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png" // the pop-in header image (default none)
+          description="Foe Gebiya"
+          amount={cart.total * 100}
+          currency="USD"
+          shippingAddress
+          billingAddress
+          token={onToken}
+          stripeKey={kEy}
+        >
+          <button className="px-3 py-2 text-xl text-white bg-blue-700 rounded-lg">
+            Pay
+          </button>
+        </StripeCheckout>
+      )}
     </div>
   );
 }
