@@ -1,10 +1,12 @@
 import express from 'express';
 
-import { StripePay } from '../controllers/stripe.js';
+import { StripePay, chapaPay } from '../controllers/stripe.js';
 
 const router = express.Router();
 
 //stripe
 router.post('/stripe', StripePay);
 
+//chapa
+router.post('/chapa', chapaPay);
 export default router;
