@@ -45,7 +45,7 @@ function Stripe() {
       ) : (
         <StripeCheckout
           name={user.currentUser.username}
-          image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png" // the pop-in header image (default none)
+          image="https://plus.unsplash.com/premium_photo-1664201890375-f8fa405cdb7d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // the pop-in header image (default none)
           description="Foe Gebiya"
           amount={cart.total * 100}
           currency="USD"
