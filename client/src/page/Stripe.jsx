@@ -31,7 +31,7 @@ function Stripe() {
           }
         );
         console.log(res);
-        navigation('/', { data: res.data });
+        navigation('/success', { data: res.data });
       } catch (error) {
         console.log(error);
       }
