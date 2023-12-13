@@ -15,7 +15,7 @@ function Stripe() {
     const makeRequest = async () => {
       try {
         const res = axios.post(
-          'https://e-gebiya-k75e.onrender.com/api/pay/payment',
+          'https://e-gebiya-k75e.onrender.com/api/pay/stripe',
           {
             tokenId: stripeToken.id,
             amount: 2000,
