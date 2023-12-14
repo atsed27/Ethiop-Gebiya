@@ -34,7 +34,7 @@ export const chapaPay = async (req, res, next) => {
       first_name: 'Daniel',
       last_name: 'Nigatu',
       phone_number: '0916213371',
-      tx_ref: req.body,
+      tx_ref: req.body.tx_ref,
       callback_url: 'https://webhook.site/077164d6-29cb-40df-ba29-8a00e59a7e60',
       return_url: 'https://e-gebiya.vercel.app/',
       'customization[title]': 'Payment for my favourite merchant',
