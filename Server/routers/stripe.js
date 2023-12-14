@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { StripePay, chapaPay } from '../controllers/stripe.js';
+import { StripePay, chapaPay, chapaPayVerify } from '../controllers/stripe.js';
 
 const router = express.Router();
 
@@ -9,4 +9,8 @@ router.post('/stripe', StripePay);
 
 //chapa
 router.post('/chapa', chapaPay);
+
+//chapa verify
+router.get('/chapa', chapaPayVerify);
+
 export default router;
