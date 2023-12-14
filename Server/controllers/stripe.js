@@ -43,6 +43,7 @@ export const chapaPay = async (req, res, next) => {
   };
   request(options, function (error, response) {
     if (error) throw new Error(error);
+    console.log(response);
     res.status(200).json(response.body);
   });
 };
