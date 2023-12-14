@@ -11,6 +11,6 @@ router.post('/stripe', StripePay);
 router.post('/chapa', chapaPay);
 
 //chapa verify
-router.get('/chapa/vi', chapaPayVerify);
+router.get('/chapa/vi/:id', chapaPayVerify);
 
 export default router;
