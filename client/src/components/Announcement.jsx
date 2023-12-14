@@ -12,7 +12,7 @@ const Container = styled.div`
   font-weight: bold;
 `;
 function Announcement() {
-  return <Container>Super Deal ! Free Shopping On Order Over $50</Container>;
+  return <Container>ትልቅ ነገር ! 1000 ብር በላይ ተዛዞችን በነፃ አናደርሳለን</Container>;
 }
 
 export default Announcement;
