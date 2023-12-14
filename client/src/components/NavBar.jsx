@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Search from '@mui/icons-material/Search';
 import Shopping from '@mui/icons-material/ShoppingCartOutlined';
-import Badge from '@mui/icons-material/Badge';
+import { Badge } from '@material-ui/core';
+import { ShoppingCartOutlined } from '@material-ui/icons';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -115,8 +116,8 @@ function NavBar() {
           )}
           <Link to="/cart" style={{ textDecoration: 'none' }}>
             <MenuItem>
-              <Badge badgeContent={4} color="secondary">
-                <Shopping color="action" />
+              <Badge badgeContent={4}>
+                <ShoppingCartOutlined color="action" />
               </Badge>
             </MenuItem>
           </Link>
