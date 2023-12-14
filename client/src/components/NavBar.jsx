@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Search from '@mui/icons-material/Search';
 import Shopping from '@mui/icons-material/ShoppingCartOutlined';
+import Badge from '@mui/icons-material/Badge';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -114,12 +115,9 @@ function NavBar() {
           )}
           <Link to="/cart" style={{ textDecoration: 'none' }}>
             <MenuItem>
-              <Shopping size={25} />
-              {cart.quantity > 0 ? (
-                <Number>{cart.quantity}</Number>
-              ) : (
-                <Number></Number>
-              )}
+              <Badge badgeContent={4} color="secondary">
+                <Shopping color="action" />
+              </Badge>
             </MenuItem>
           </Link>
         </Right>
