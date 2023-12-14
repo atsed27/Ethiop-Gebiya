@@ -53,6 +53,7 @@ const Center = styled.div`
   text-align: center;
 `;
 const Logo = styled.div`
+  font-weight: bold;
   @media only screen and (max-width: 630px) {
     font-size: 24px;
     font-weight: 500;
