@@ -20,6 +20,13 @@ function Pay() {
       let x = JSON.parse(res.data);
       let url = x.data.checkout_url;
       window.location.href = url;
+      const res1 = await axios.post(
+        'https://e-gebiya-k75e.onrender.com/api/pay/chapa/vi',
+        {
+          tx_ref: randomString,
+        }
+      );
+      console.log(res1);
     } catch (error) {
       console.log(error);
     }
