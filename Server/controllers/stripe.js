@@ -35,7 +35,7 @@ export const chapaPay = async (req, res, next) => {
       last_name: 'Nigatu',
       phone_number: '0916213371',
       tx_ref: req.body.tx_ref,
-      callback_url: ``,
+      callback_url: `https://e-gebiya-k75e.onrender.com/api/pay/chapa/${req.body.tx_ref}`,
       return_url: 'https://e-gebiya.vercel.app/',
       'customization[title]': 'Payment for my favourite merchant',
       'customization[description]': 'I love online payments',
