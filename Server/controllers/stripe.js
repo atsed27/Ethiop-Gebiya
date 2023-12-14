@@ -20,6 +20,7 @@ export const StripePay = async (req, res, next) => {
 };
 
 export const chapaPay = async (req, res, next) => {
+  console.log(req.body.tx_ref);
   var options = {
     method: 'POST',
     url: 'https://api.chapa.co/v1/transaction/initialize',
@@ -52,7 +53,7 @@ export const chapaPayVerify = async (req, res, next) => {
   let tx_ref = req.body.tx_ref;
   var options = {
     method: 'GET',
-    url: `https://api.chapa.co/v1/transaction/verify/APjFGSfmQj2FC`,
+    url: `https://api.chapa.co/v1/transaction/verify/`,
     headers: {
       Authorization: process.env.chapaKey,
     },

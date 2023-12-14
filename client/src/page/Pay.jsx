@@ -9,6 +9,7 @@ function Pay() {
     try {
       const randomNumber = Math.floor(Math.random() * 1000000);
       const randomString = 'daniel-chap' + randomNumber;
+      console.log(randomString);
       const res = await axios.post(
         'https://e-gebiya-k75e.onrender.com/api/pay/chapa',
         {
