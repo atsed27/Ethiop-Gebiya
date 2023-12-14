@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Search from '@mui/icons-material/Search';
 import Shopping from '@mui/icons-material/ShoppingCartOutlined';
-import Badge from '@mui/icons-material/BadgeOutlined';
-import { ShoppingCartOutlined } from '@materia';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -101,7 +99,7 @@ function NavBar() {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>Gebiya</Logo>
+          <Logo>ቅዳሜ ገብያ.</Logo>
         </Center>
         <Right>
           {user.currentUser ? (
@@ -116,9 +114,12 @@ function NavBar() {
           )}
           <Link to="/cart" style={{ textDecoration: 'none' }}>
             <MenuItem>
-              <Badge badgeContent={4}>
-                <ShoppingCartOutlined color="action" />
-              </Badge>
+              <Shopping size={25} />
+              {cart.quantity > 0 ? (
+                <Number>{cart.quantity}</Number>
+              ) : (
+                <Number></Number>
+              )}
             </MenuItem>
           </Link>
         </Right>
