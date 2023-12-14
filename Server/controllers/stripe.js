@@ -50,7 +50,8 @@ export const chapaPay = async (req, res, next) => {
 };
 
 export const chapaPayVerify = async (req, res, next) => {
-  let tx_ref = req.body.tx_ref;
+  let tx_ref = req.params.id;
+  console.log(tx_ref);
   var options = {
     method: 'GET',
     url: `https://api.chapa.co/v1/transaction/verify/${tx_ref}`,
