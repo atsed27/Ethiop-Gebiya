@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Search from '@mui/icons-material/Search';
 import Shopping from '@mui/icons-material/ShoppingCartOutlined';
-import { Badge } from '@material-ui/core';
-import { ShoppingCartOutlined } from '@material-ui/icons';
+import Badge from '@mui/icons-material/BadgeOutlined';
+import { ShoppingCartOutlined } from '@materia';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
