@@ -7,10 +7,13 @@ function Pay() {
   const cart = useSelector((state) => state.cart);
   const chapaClick = async () => {
     try {
+      const randomNumber = Math.floor(Math.random() * 1000000);
+      const randomString = 'daniel-chap' + randomNumber;
       const res = await axios.post(
         'https://e-gebiya-k75e.onrender.com/api/pay/chapa',
         {
           amount: cart.total,
+          tx_ref: randomString,
         }
       );
       //console.log(JSON.parse(res.data));
