@@ -8,6 +8,7 @@ const Container = styled.div`
   height: 60vh;
   position: relative;
 `;
+
 const Image = styled.img`
   width: 100%;
   height: 100%;

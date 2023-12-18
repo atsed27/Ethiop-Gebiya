@@ -36,13 +36,13 @@ const TopButton = styled.button`
   background-color: ${(props) =>
     props.type === 'filed' ? 'black' : 'transparent'};
   color: ${(props) => props.type === 'filed' && 'white'};
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     font-size: 10px;
     font-weight: 500;
   }
 `;
 const TopTexts = styled.div`
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     display: none;
   }
 `;
@@ -56,7 +56,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     flex-direction: column;
   }
 `;
@@ -66,7 +66,7 @@ const Info = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     flex-direction: column;
   }
 `;
@@ -86,8 +86,7 @@ const Detail = styled.div`
 const ProductName = styled.span``;
 
 const ProductId = styled.span`
-  @media only screen and (max-width: 430px) {
-    display: none;
+  @media only screen and (max-width: 630px) {
   }
 `;
 
@@ -115,14 +114,14 @@ const ProductAmountContainer = styled.div`
 const ProductAmount = styled.div`
   font-size: 24px;
   margin: 5px;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     margin: 5px 15px;
   }
 `;
 const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     margin-bottom: 20px;
   }
 `;
@@ -227,7 +226,12 @@ function Cart() {
               <SummaryPrice>$ {cart.total}</SummaryPrice>
             </SummaryItem>
             <SummaryButton>
-              <Link to={'/pay'}>CHECK OUT NOW</Link>
+              <Link
+                to={'/pay'}
+                style={{ textDecoration: 'none', color: 'white' }}
+              >
+                CHECK OUT NOW
+              </Link>
             </SummaryButton>
           </Summary>
         </Bottom>

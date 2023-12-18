@@ -3,12 +3,23 @@ import styled from 'styled-components';
 //import { popularProducts } from '../data';
 import Product from './Product';
 import axios from 'axios';
+
+const TContainer = styled.div``;
+
 const Container = styled.div`
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 `;
+const TitleD = styled.div`
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 24px;
+`;
+
 function Products({ category, filters, sort }) {
   const [products, setProduct] = useState([]);
   const [filterProduct, setFilterProduct] = useState([]);
@@ -51,15 +62,18 @@ function Products({ category, filters, sort }) {
     }
   }, [sort]);
   return (
-    <Container>
-      {category
-        ? filterProduct.map((items) => (
-            <Product key={items._id} items={items} />
-          ))
-        : products
-            .slice(0, 8)
-            .map((items) => <Product key={items._id} items={items} />)}
-    </Container>
+    <TContainer>
+      <TitleD>Popular Products :</TitleD>
+      <Container>
+        {category
+          ? filterProduct.map((items) => (
+              <Product key={items._id} items={items} />
+            ))
+          : products
+              .slice(0, 8)
+              .map((items) => <Product key={items._id} items={items} />)}
+      </Container>
+    </TContainer>
   );
 }
 

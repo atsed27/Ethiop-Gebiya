@@ -10,7 +10,7 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   @media only screen and (max-width: 630px) {
-    display: none;
+    height: 70vh;
   }
 `;
 const Arrow = styled.div`
@@ -43,26 +43,43 @@ const Slide = styled.div`
   display: flex;
   align-items: center;
   background-color: ${(props) => props.bg};
+  @media only screen and (max-width: 630px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const ImageContainer = styled.div`
-  padding: 15px;
   height: 100%;
   flex: 1;
 `;
 const Image = styled.img`
-  display: flex;
   border-radius: 20px;
+  display: flex;
   margin: auto;
   margin-top: 100px;
+  padding-left: 10px;
+  @media only screen and (max-width: 630px) {
+    width: 100%;
+    height: 60%;
+    padding-left: 0px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
 `;
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+  @media only screen and (max-width: 630px) {
+    display: none;
+  }
 `;
 const Title = styled.h1`
   font-size: 70px;
   @media only screen and (max-width: 1000px) {
     font-size: 40px;
+  }
+  @media only screen and (max-width: 630px) {
+    display: none;
   }
 `;
 const Des = styled.p`
