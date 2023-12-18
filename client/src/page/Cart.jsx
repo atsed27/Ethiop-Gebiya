@@ -12,7 +12,7 @@ const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 20px;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     padding: 10px;
   }
 `;
@@ -87,6 +87,7 @@ const ProductName = styled.span``;
 
 const ProductId = styled.span`
   @media only screen and (max-width: 630px) {
+    display: none;
   }
 `;
 
