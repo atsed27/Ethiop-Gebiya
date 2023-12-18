@@ -4,6 +4,10 @@ import Facebook from '@mui/icons-material/Facebook';
 import Room from '@mui/icons-material/Room';
 import Phone from '@mui/icons-material/Phone';
 import MailOutlineOutlined from '@mui/icons-material/MailOutlineOutlined';
+import Instagram from '@mui/icons-material/Instagram';
+import Twitter from '@mui/icons-material/Twitter';
+import LinkedIn from '@mui/icons-material/LinkedIn';
+
 const Container = styled.div`
   display: flex;
   @media only screen and (max-width: 630px) {
@@ -22,6 +26,11 @@ const Desc = styled.div`
 `;
 const SocialContainer = styled.div`
   display: flex;
+  @media only screen and (max-width: 630px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 `;
 const SocialIcon = styled.div`
   width: 40px;
@@ -37,7 +46,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     display: none;
   }
 `;
@@ -84,14 +93,17 @@ function Footer() {
           tetekemubet sewch atrfubet selam byale brazeroche
         </Desc>
         <SocialContainer>
-          <SocialIcon color="3B5999">
-            <Facebook />
+          <SocialIcon color="55acef">
+            <LinkedIn />
+          </SocialIcon>
+          <SocialIcon color="E4405f">
+            <Instagram />
           </SocialIcon>
           <SocialIcon color="3B5999">
             <Facebook />
           </SocialIcon>
-          <SocialIcon color="3B5999">
-            <Facebook />
+          <SocialIcon color="55acef">
+            <Twitter />
           </SocialIcon>
         </SocialContainer>
       </Left>
@@ -117,7 +129,7 @@ function Footer() {
         <ContactItem>
           {' '}
           <Room style={{ marginRight: '10px' }} />
-          Gonder , LDETA Kebele 16
+          Addis Abeba , LDETA
         </ContactItem>
         <ContactItem>
           {' '}
@@ -125,7 +137,7 @@ function Footer() {
         </ContactItem>
         <ContactItem>
           {' '}
-          <MailOutlineOutlined style={{ marginRight: '10px' }} /> contact at
+          <MailOutlineOutlined style={{ marginRight: '10px' }} />
           danielnigatu09@gmail.com
         </ContactItem>
         <Payment src="j" alt="pay" />
