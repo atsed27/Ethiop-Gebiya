@@ -4,7 +4,7 @@ import Shopping from '@mui/icons-material/ShoppingCartOutlined';
 import Search from '@mui/icons-material/Search';
 import FavoriteBorderOutlined from '@mui/icons-material/FavoriteBorderOutlined';
 import { Link } from 'react-router-dom';
-import pp from '../img/da.jpg';
+import pp from '../img/habesha_K.jpeg';
 const Info = styled.div`
   opacity: 0;
   width: 100%;
@@ -36,8 +36,8 @@ const Container = styled.div`
 
 const Image = styled.img`
   z-index: 2;
-  height: 75%;
-  width: 80%;
+  height: 280px;
+  width: 280px;
 `;
 
 const Icon = styled.div`
@@ -59,7 +59,7 @@ const Icon = styled.div`
 function Product({ items }) {
   return (
     <Container>
-      <Image src={items.img} alt={items._id} />
+      <Image src={pp} alt={items._id} />
       <Info>
         <Icon>
           <Shopping />

@@ -75,7 +75,7 @@ function Login() {
     dispatch(loginStart());
     try {
       const res = await axios.post(
-        'https://e-gebiya-k75e.onrender.com/api/auth/signIn',
+        'http://localhost:9327/api/auth/signIn',
         {
           email,
           password,

@@ -54,8 +54,13 @@ const Center = styled.div`
 `;
 const Logo = styled.div`
   font-weight: bold;
+  font-size: 24px;
   @media only screen and (max-width: 630px) {
     font-size: 24px;
+    font-weight: 500;
+  }
+  @media only screen and (max-width: 430px) {
+    font-size: 20px;
     font-weight: 500;
   }
 `;
@@ -107,20 +112,28 @@ function NavBar() {
             <div>user</div>
           ) : (
             <>
-              <MenuItem>Register</MenuItem>
-              <Link to="/login" style={{ textDecoration: 'none' }}>
+              <Link
+                to="/signup"
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
+                <MenuItem>Register</MenuItem>
+              </Link>
+              <Link
+                to="/login"
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
                 <MenuItem>SignIn</MenuItem>
               </Link>
             </>
           )}
           <Link to="/cart" style={{ textDecoration: 'none' }}>
             <MenuItem>
-              <Shopping size={25} />
               {cart.quantity > 0 ? (
                 <Number>{cart.quantity}</Number>
               ) : (
                 <Number></Number>
               )}
+              <Shopping size={25} />
             </MenuItem>
           </Link>
         </Right>

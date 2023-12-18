@@ -1,4 +1,3 @@
-import './index.css';
 import Cart from './page/Cart';
 import Home from './page/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -18,7 +17,7 @@ function App() {
           <Route path="products/:category" element={<ProductList />} />
           <Route path="product/:id" element={<Products />} />
           <Route path="cart" element={<Cart />} />
-          <Route path="register" element={<Register />} />
+          <Route path="signup" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="pay" element={<Pay />} />
           <Route path="stripe" element={<Stripe />} />
