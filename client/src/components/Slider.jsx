@@ -45,20 +45,15 @@ const Slide = styled.div`
   background-color: ${(props) => props.bg};
 `;
 const ImageContainer = styled.div`
+  padding: 15px;
   height: 100%;
   flex: 1;
 `;
 const Image = styled.img`
-  width: 80%;
-  height: 80%;
   display: flex;
+  border-radius: 20px;
   margin: auto;
   margin-top: 100px;
-  @media only screen and (max-width: 780px) {
-    height: 100%;
-    width: 100%;
-    margin-top: 0px;
-  }
 `;
 const InfoContainer = styled.div`
   flex: 1;

@@ -24,16 +24,18 @@ const Filter = styled.div`
   }
 `;
 const FilterText = styled.span`
+
   font-size: 20px;
   font-weight: 600
   margin-right: 20px;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     margin: 0px;
   }
 `;
 const Select = styled.select`
   padding: 10px;
-  margin-right: 20px;
+  margin-right: 15px;
+  margin-left: 10px;
   @media only screen and (max-width: 430px) {
     margin: 10px 0px;
   }
@@ -63,7 +65,7 @@ function ProductList() {
         <Filter>
           <FilterText>Filter Product:</FilterText>
           <Select name="color" onChange={handleFilter}>
-            <Option disabled>Color</Option>
+            <Option>Color</Option>
             <Option>white</Option>
             <Option>red</Option>
             <Option>black</Option>
@@ -71,7 +73,7 @@ function ProductList() {
             <Option>green</Option>
           </Select>
           <Select name="size" onChange={handleFilter}>
-            <Option disabled>Size</Option>
+            <Option>Size</Option>
             <Option>S</Option>
             <Option>M</Option>
             <Option>L</Option>

@@ -190,7 +190,7 @@ function Cart() {
                     </ProductId>
                     <ProductColor color={product.color} />
                     <ProductSize>
-                      <b>Size:</b> 42
+                      <b>Size:</b> {product.size}
                     </ProductSize>
                   </Detail>
                 </ProductDetail>

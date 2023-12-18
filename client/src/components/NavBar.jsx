@@ -44,8 +44,9 @@ const SearchContainer = styled.div`
   }
 `;
 const Input = styled.input`
+  padding: 4px;
   @media only screen and (max-width: 630px) {
-    width: 50px;
+    width: 80px;
   }
 `;
 const Center = styled.div`
@@ -84,11 +85,12 @@ const MenuItem = styled.div`
 `;
 const Number = styled.div`
   display: flex;
+  margin-left: 10px;
 `;
 function NavBar() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
-  console.log(user.currentUser);
+
   return (
     <Container>
       <Wrapper>

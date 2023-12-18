@@ -15,7 +15,7 @@ const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     padding: 10px;
     flex-direction: column;
   }
@@ -25,9 +25,9 @@ const ImageContainer = styled.div`
 `;
 const Image = styled.img`
   width: 100%;
-  height: 90vh;
+  height: 60vh;
   object-fit: cover;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     height: 40vh;
   }
 `;
@@ -35,7 +35,7 @@ const Image = styled.img`
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     padding: 10px;
   }
 `;
@@ -55,7 +55,7 @@ const FilterContainer = styled.div`
   justify-content: space-between;
   width: 50%;
   margin: 30px 0px;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     width: 100%;
   }
 `;
@@ -88,7 +88,7 @@ const AddContainer = styled.div`
   width: 50%;
   align-items: center;
   justify-content: space-between;
-  @media only screen and (max-width: 430px) {
+  @media only screen and (max-width: 630px) {
     width: 100%;
   }
 `;
@@ -131,7 +131,7 @@ function Products() {
     const productDetail = async () => {
       try {
         const res = await axios.get(
-          `https://e-gebiya-k75e.onrender.com/api/product/get/${id}`
+          `http://localhost:9327/api/product/get/${id}`
         );
 
         setProduct(res.data);
@@ -150,6 +150,12 @@ function Products() {
     }
   };
   const handelCart = () => {
+    if (color === '') {
+      return alert('please add color');
+    }
+    if (size === '') {
+      return alert('please add size');
+    }
     disPatch(addProduct({ ...product, quantity, color, size }));
   };
   return (
@@ -186,7 +192,9 @@ function Products() {
               <FilterTitle>Size</FilterTitle>
               <FilterSize selected onChange={(e) => setSize(e.target.value)}>
                 {product.size?.map((size) => (
-                  <Option key={size}> {size}</Option>
+                  <Option size={size} key={size}>
+                    {size}
+                  </Option>
                 ))}
               </FilterSize>
             </Filter>
