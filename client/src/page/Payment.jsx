@@ -85,7 +85,9 @@ function Payment() {
         <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
           <Stripe>
             <Image src={stripe} alt="dani" />
-            <Title>Pay with Stripe</Title>
+            <Title>
+              <Link to={'/stripe'}>Pay With Stripe</Link>
+            </Title>
           </Stripe>
         </Link>
         <Chapa>

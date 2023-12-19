@@ -132,7 +132,7 @@ function NavBar() {
               </Link>
             </>
           )}
-          <Link to="/cart" style={{ textDecoration: 'none' }}>
+          <Link to="/cart" style={{ textDecoration: 'none', color: 'black' }}>
             <MenuItem>
               {cart.quantity > 0 ? (
                 <Number>{cart.quantity}</Number>
