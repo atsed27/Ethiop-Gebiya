@@ -8,6 +8,7 @@ import Login from './page/Login';
 import Pay from './page/Pay';
 import Stripe from './page/Stripe';
 import Success from './page/Success';
+import Payment from './page/Payment';
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
           <Route path="signup" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="pay" element={<Pay />} />
+          <Route path="payment" element={<Payment />} />
           <Route path="stripe" element={<Stripe />} />
           <Route path="success" element={<Success />} />
         </Route>

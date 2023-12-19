@@ -166,12 +166,16 @@ function Cart() {
       <Wrapper>
         <Title>Your Bug</Title>
         <Top>
-          <TopButton>Continue Shopping</TopButton>
+          <Link to="/">
+            <TopButton>Continue Shopping</TopButton>
+          </Link>
           <TopTexts>
             <TopText> Shopping Bag (2) </TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filed">Check Out Now</TopButton>
+          <Link to={'/pay'}>
+            <TopButton type="filed">Check Out Now</TopButton>
+          </Link>
         </Top>
         <Bottom>
           <Info>

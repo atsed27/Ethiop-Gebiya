@@ -25,7 +25,7 @@ const ImageContainer = styled.div`
 `;
 const Image = styled.img`
   width: 100%;
-  height: 60vh;
+  height: 80vh;
   object-fit: cover;
   @media only screen and (max-width: 630px) {
     height: 40vh;

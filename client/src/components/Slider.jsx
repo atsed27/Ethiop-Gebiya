@@ -78,9 +78,6 @@ const Title = styled.h1`
   @media only screen and (max-width: 1000px) {
     font-size: 40px;
   }
-  @media only screen and (max-width: 630px) {
-    display: none;
-  }
 `;
 const Des = styled.p`
   margin: 50px 0px;
@@ -102,7 +99,7 @@ const Button = styled.button`
 
 function Slider() {
   const [slideIndex, setSlideIndex] = useState(0);
-  console.log(slideIndex);
+
   const handleClick = (dir) => {
     if (dir === 'left') {
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);

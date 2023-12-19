@@ -17,7 +17,7 @@ function Pay() {
           tx_ref: randomString,
         }
       );
-      //console.log(JSON.parse(res.data));
+      
       let x = JSON.parse(res.data);
       let url = x.data.checkout_url;
       window.location.href = url;
