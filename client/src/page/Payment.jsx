@@ -86,7 +86,12 @@ function Payment() {
           <Stripe>
             <Image src={stripe} alt="dani" />
             <Title>
-              <Link to={'/stripe'}>Pay With Stripe</Link>
+              <Link
+                to={'/stripe'}
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
+                Pay With Stripe
+              </Link>
             </Title>
           </Stripe>
         </Link>

@@ -3,10 +3,26 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
 const kEy =
   'pk_test_51OGNW1FH7zgKERAJkyDaNGlXVOei0qeT20URg24F8f2ynpSOvGIn1Jq6PZKOGKbjQ5yJ53QUhfa6E6Sm4c1AUiaZ00xfjavCU2';
 
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
+const Button = styled.button`
+  padding: 12px 10px;
+  font size:20px;
+  color:white;
+  background-color:blue;
+  border:none;
+  border-radius:10px;
+
+`;
 function Stripe() {
   const [stripeToken, setStripeToke] = useState(null);
   const cart = useSelector((state) => state.cart);
@@ -39,7 +55,7 @@ function Stripe() {
     stripeToken && makeRequest();
   }, [cart.total, navigation, stripeToken]);
   return (
-    <div className="flex items-center justify-center h-screen">
+    <Container>
       {stripeToken ? (
         <span>please with it is processing....</span>
       ) : (
@@ -54,12 +70,12 @@ function Stripe() {
           token={onToken}
           stripeKey={kEy}
         >
-          <button className="px-3 py-2 text-xl text-white bg-blue-700 rounded-lg">
-            Pay
-          </button>
+          <Button className="px-3 py-2 text-xl text-white bg-blue-700 rounded-lg">
+            Pay Now
+          </Button>
         </StripeCheckout>
       )}
-    </div>
+    </Container>
   );
 }
 
