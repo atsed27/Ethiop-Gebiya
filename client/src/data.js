@@ -30,7 +30,7 @@ export const categories = [
   {
     id: 1,
     img: imgs,
-    title: 'SHIRT STYLE',
+    title: 'Habesh Kemis',
     category: 'tishert',
   },
   {
@@ -42,7 +42,7 @@ export const categories = [
   {
     id: 3,
     img: imgs3,
-    title: 'Old STYLE',
+    title: 'Habsha Style',
     category: 'coat',
   },
 ];

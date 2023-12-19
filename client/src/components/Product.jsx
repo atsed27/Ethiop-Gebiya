@@ -4,7 +4,7 @@ import Shopping from '@mui/icons-material/ShoppingCartOutlined';
 import Search from '@mui/icons-material/Search';
 import FavoriteBorderOutlined from '@mui/icons-material/FavoriteBorderOutlined';
 import { Link } from 'react-router-dom';
-import pp from '../img/habesha_K.jpeg';
+
 const Info = styled.div`
   opacity: 0;
   width: 100%;

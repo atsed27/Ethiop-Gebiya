@@ -164,7 +164,7 @@ function Products() {
       <Announcement />
       <Wrapper>
         <ImageContainer>
-          <Image src={img} />
+          <Image src={product.img} />
         </ImageContainer>
         <InfoContainer>
           <Title> {product.title} </Title>

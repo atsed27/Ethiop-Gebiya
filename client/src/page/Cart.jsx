@@ -182,7 +182,7 @@ function Cart() {
             {cart.products.map((product) => (
               <Product>
                 <ProductDetail>
-                  <Image src={img} />
+                  <Image src={product.img} />
                   <Detail>
                     <ProductName>
                       {' '}

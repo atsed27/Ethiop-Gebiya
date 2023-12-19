@@ -107,7 +107,11 @@ function NavBar() {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>ቅዳሜ ገብያ.</Logo>
+          <Logo>
+            <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+              ቅዳሜ ገብያ.
+            </Link>
+          </Logo>
         </Center>
         <Right>
           {user.currentUser ? (
