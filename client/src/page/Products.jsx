@@ -131,7 +131,7 @@ function Products() {
     const productDetail = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:9327/api/product/get/${id}`
+          `https://e-gebiya-k75e.onrender.com/api/product/get/${id}`
         );
 
         setProduct(res.data);

@@ -29,8 +29,8 @@ function Products({ category, filters, sort }) {
       try {
         const res = await axios.get(
           category
-            ? `http://localhost:9327/api/product/get?category=${category}`
-            : 'http://localhost:9327/api/product/get'
+            ? `https://e-gebiya-k75e.onrender.com/api/product/get?category=${category}`
+            : 'https://e-gebiya-k75e.onrender.com/api/product/get'
         );
 
         setProduct(res.data);

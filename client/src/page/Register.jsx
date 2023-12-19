@@ -69,14 +69,17 @@ function Register() {
   const handleSignUp = async (e) => {
     try {
       setLoading(true);
-      const res = await axios.post('http://localhost:9327/api/auth/signup', {
-        fName: firstName,
-        lName: lastName,
-        email,
-        username,
-        password,
-        conformPassword,
-      });
+      const res = await axios.post(
+        'https://e-gebiya-k75e.onrender.com/api/auth/signup',
+        {
+          fName: firstName,
+          lName: lastName,
+          email,
+          username,
+          password,
+          conformPassword,
+        }
+      );
       setLoading(false);
       router('/login');
     } catch (error) {

@@ -64,10 +64,13 @@ function Payment() {
       const randomNumber = Math.floor(Math.random() * 1000000);
       const randomString = 'daniel-chap' + randomNumber;
       console.log(randomString);
-      const res = await axios.post('http://localhost:9327/api/pay/chapa', {
-        amount: cart.total,
-        tx_ref: randomString,
-      });
+      const res = await axios.post(
+        'https://e-gebiya-k75e.onrender.com/api/pay/chapa',
+        {
+          amount: cart.total,
+          tx_ref: randomString,
+        }
+      );
 
       let x = JSON.parse(res.data);
       let url = x.data.checkout_url;
