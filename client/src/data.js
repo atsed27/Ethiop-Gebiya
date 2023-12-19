@@ -13,7 +13,7 @@ export const slidersItems = [
   {
     id: 2,
     img: imgs2,
-    title: 'Daniel SAL',
+    title: 'ሀበሻ ቀሚስ',
     desc: "DON'T COMPROMISE ON STYLE ! GET FLAT 30% OFF FOR NEW ARRIVALS .",
     bg: 'fcf1ed',
   },

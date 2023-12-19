@@ -232,7 +232,7 @@ function Cart() {
             </SummaryItem>
             <SummaryButton>
               <Link
-                to={'/pay'}
+                to={'/payment'}
                 style={{ textDecoration: 'none', color: 'white' }}
               >
                 CHECK OUT NOW
