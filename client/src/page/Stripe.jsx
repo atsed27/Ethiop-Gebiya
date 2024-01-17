@@ -60,7 +60,7 @@ function Stripe() {
         <span>please with it is processing....</span>
       ) : (
         <StripeCheckout
-          name={user.currentUser.username}
+          name={user.currentUser?.username}
           image="https://plus.unsplash.com/premium_photo-1664201890375-f8fa405cdb7d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // the pop-in header image (default none)
           description="Foe Gebiya"
           amount={cart.total * 100}

@@ -53,9 +53,9 @@ const Title = styled.button`
   border-radius: 10px;
   cursor: pointer;
   border: none;
-  padding: 10px;
+  padding: 5px;
   margin-left: 20px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 `;
 function Payment() {
