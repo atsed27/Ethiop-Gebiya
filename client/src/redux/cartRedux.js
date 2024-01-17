@@ -19,9 +19,15 @@ const cartSlice = createSlice({
     addFiler: (state) => {
       state.error = true;
     },
+    RestProduct: (state) => {
+      state.products = [];
+      state.quantity = 0;
+      state.total = 0;
+      state.error = false;
+    },
   },
 });
 
-export const { addProduct, addFiler } = cartSlice.actions;
+export const { addProduct, addFiler, RestProduct } = cartSlice.actions;
 
 export default cartSlice.reducer;

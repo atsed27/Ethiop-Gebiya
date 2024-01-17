@@ -158,7 +158,7 @@ const SummaryButton = styled.button`
 `;
 function Cart() {
   const cart = useSelector((state) => state.cart);
-  console.log(cart);
+
   return (
     <Container>
       <NavBar />

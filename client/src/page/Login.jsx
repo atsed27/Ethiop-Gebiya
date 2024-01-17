@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginFiler, loginStart, loginSuccess } from '../redux/userSlice';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100vw;
@@ -56,7 +57,7 @@ const Button = styled.button`
     margin: auto;
   }
 `;
-const Link = styled.a`
+const LinkA = styled.a`
   margin: 5px 0px;
   font-size: 12px;
   text-decoration: underline;
@@ -121,8 +122,8 @@ function Login() {
           <Button onClick={handleLogin} disabled={user.loading}>
             SIGN IN
           </Button>
-          <Link>Do NoT YOU HAVE REMEMBER YOUR PASSWORD </Link>
-          <Link> CREATE NEW ACCOUNT </Link>
+          <LinkA>Do NoT YOU HAVE REMEMBER YOUR PASSWORD </LinkA>
+          <Link to="/signup"> CREATE NEW ACCOUNT </Link>
         </Form>
       </Wrapper>
     </Container>

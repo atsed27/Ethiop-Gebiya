@@ -4,7 +4,8 @@ import stripe from '../img/stripe.jpg';
 import chapa from '../img/chapa.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { RestProduct } from '../redux/cartRedux';
 
 const Container = styled.div`
   display: flex;
@@ -59,6 +60,7 @@ const Title = styled.button`
 `;
 function Payment() {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   const chapaClick = async () => {
     try {
       const randomNumber = Math.floor(Math.random() * 1000000);
@@ -71,7 +73,7 @@ function Payment() {
           tx_ref: randomString,
         }
       );
-
+      dispatch(RestProduct());
       let x = JSON.parse(res.data);
       let url = x.data.checkout_url;
       window.location.href = url;
