@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { RestProduct } from '../redux/cartRedux';
 
 const kEy =
   'pk_test_51OGNW1FH7zgKERAJkyDaNGlXVOei0qeT20URg24F8f2ynpSOvGIn1Jq6PZKOGKbjQ5yJ53QUhfa6E6Sm4c1AUiaZ00xfjavCU2';
@@ -28,7 +29,7 @@ function Stripe() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   const navigation = useNavigate();
-
+  const dispatch = useDispatch();
   console.log(user);
   console.log(cart);
   const onToken = (token) => {
@@ -47,6 +48,7 @@ function Stripe() {
           }
         );
         console.log(res);
+        dispatch(RestProduct());
         navigation('/success', { data: res.data });
       } catch (error) {
         console.log(error);
