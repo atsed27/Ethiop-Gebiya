@@ -181,9 +181,8 @@ function Cart() {
             <TopText> Shopping Bag (2) </TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <Link to={'/pay'}>
-            <TopButton type="filed">Check Out Now</TopButton>
-          </Link>
+
+          <TopButton type="filed">Check Out Now</TopButton>
         </Top>
         <Bottom>
           <Info>
