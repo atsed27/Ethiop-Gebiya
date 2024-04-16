@@ -20,7 +20,7 @@ export const slidersItems = [
   {
     id: 3,
     img: imgs,
-    title: 'Lam SAL',
+    title: 'Dani SAL',
     desc: "DON'T COMPROMISE ON STYLE ! GET FLAT 30% OFF FOR NEW ARRIVALS .",
     bg: 'fbf0f4',
   },

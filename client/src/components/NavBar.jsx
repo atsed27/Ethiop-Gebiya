@@ -115,7 +115,9 @@ function NavBar() {
         </Center>
         <Right>
           {user.currentUser ? (
-            <div>user</div>
+            <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+              <MenuItem>LogOut</MenuItem>
+            </Link>
           ) : (
             <>
               <Link
