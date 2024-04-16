@@ -97,7 +97,6 @@ function NavBar() {
   const navigate = useNavigate();
   const handleLogOut = async () => {
     try {
-      console.log('hy');
       const res = await axios.get(
         'https://e-gebiya-k75e.onrender.com/api/auth/signOut',
         { withCredentials: true }

@@ -7,7 +7,7 @@ import Add from '@mui/icons-material/Add';
 import Remove from '@mui/icons-material/Remove';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -158,7 +158,15 @@ const SummaryButton = styled.button`
 `;
 function Cart() {
   const cart = useSelector((state) => state.cart);
-
+  const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const toPayment = async () => {
+    if (user.currentUser) {
+      navigate('/payment');
+    } else {
+      navigate('/login');
+    }
+  };
   return (
     <Container>
       <NavBar />
@@ -230,14 +238,7 @@ function Cart() {
               <SummaryText>Total</SummaryText>
               <SummaryPrice>$ {cart.total}</SummaryPrice>
             </SummaryItem>
-            <SummaryButton>
-              <Link
-                to={'/payment'}
-                style={{ textDecoration: 'none', color: 'white' }}
-              >
-                CHECK OUT NOW
-              </Link>
-            </SummaryButton>
+            <SummaryButton onClick={toPayment}>CHECK OUT NOW</SummaryButton>
           </Summary>
         </Bottom>
       </Wrapper>
