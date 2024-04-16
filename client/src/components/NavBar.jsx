@@ -5,7 +5,9 @@ import Shopping from '@mui/icons-material/ShoppingCartOutlined';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logout } from '../redux/userSlice';
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { RestProduct } from '../redux/cartRedux';
 const Container = styled.div`
   height: 60px;
   @media only screen and (max-width: 430px) {
@@ -92,10 +94,17 @@ function NavBar() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleLogOut = async () => {
     try {
       console.log('hy');
+      const res = await axios.get(
+        'https://e-gebiya-k75e.onrender.com/api/auth/signOut',
+        { withCredentials: true }
+      );
       dispatch(logout());
+      dispatch(RestProduct());
+      navigate('/');
     } catch (error) {
       console.log(error);
     }
@@ -124,9 +133,7 @@ function NavBar() {
         </Center>
         <Right>
           {user.currentUser ? (
-            <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-              <MenuItem onClick={handleLogOut}>LogOut</MenuItem>
-            </Link>
+            <MenuItem onClick={handleLogOut}>LogOut</MenuItem>
           ) : (
             <>
               <Link
