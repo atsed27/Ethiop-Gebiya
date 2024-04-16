@@ -116,10 +116,6 @@ function Register() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <Input
-            placeholder="conform password"
-            onChange={(e) => setConformPassword(e.target.value)}
-          />
           <Dani>{error && errorMessage ? 'pass' : ''}</Dani>
           <Agreement>
             By creating a new account,I consist to the processing of my personal
