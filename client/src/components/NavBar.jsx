@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Search from '@mui/icons-material/Search';
 import Shopping from '@mui/icons-material/ShoppingCartOutlined';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { logout } from '../redux/userSlice';
 
 const Container = styled.div`
   height: 60px;
@@ -90,7 +91,15 @@ const Number = styled.div`
 function NavBar() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
-
+  const dispatch = useDispatch();
+  const handleLogOut = async () => {
+    try {
+      console.log('hy');
+      dispatch(logout());
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Container>
       <Wrapper>
@@ -116,7 +125,7 @@ function NavBar() {
         <Right>
           {user.currentUser ? (
             <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-              <MenuItem>LogOut</MenuItem>
+              <MenuItem onClick={handleLogOut}>LogOut</MenuItem>
             </Link>
           ) : (
             <>

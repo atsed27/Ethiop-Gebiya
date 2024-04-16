@@ -45,3 +45,20 @@ export const signIn = async (req, res, next) => {
     next(error);
   }
 };
+
+export const SignOut = (req, res, next) => {
+  try {
+    // Clear the JWT cookie by setting an empty cookie with an expired date
+    res.cookie('ene', '', {
+      httpOnly: true,
+      sameSite: 'None',
+      secure: true,
+      expires: new Date(0),
+    });
+
+    // Send a response indicating successful sign-out
+    res.status(200).json({ message: 'Sign-out successful' });
+  } catch (error) {
+    next(error);
+  }
+};
